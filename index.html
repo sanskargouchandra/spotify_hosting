@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify-The music Site</title>
+    <link
+      rel="icon"
+      href="https://e1.pngegg.com/pngimages/479/641/png-clipart-spotify-macos-style-spotify-logo-thumbnail.png"
+      type="image/x-icon"
+    />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap"); /* Maven Pro  font-family: 'Maven Pro', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap"); /* Varela Round  font-family: 'Maven Pro', sans-serif; */
+
+body {
+  background-color: rgb(233, 228, 238);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+nav {
+  font-family: "Ubuntu", sans-serif;
+
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-family: CircularSp, spotify-circular, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  padding-right: 20px;
+  list-style-type: none;
+  height: 90x;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+    overflow: hidden;
+ display: flex;
+ align-content: center;
+ /* justify-content: center; */
+ justify-content: space-evenly;
+ padding-right: 10px;
+
+}
+.pa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pa:hover {
+  color: rgb(92, 216, 92);
+}
+.box{
+    transition: all .5s linear 0s;
+    box-shadow: 10px 10px 70px 10px rgb(252, 252, 252) ;
+}
+.box:hover{
+    transform: scale(1.2);
+}
+
+.brand img {
+  width: 151px;
+  margin: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.container{
+    color: white;
+    font-family: 'Maven Pro', sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    
+}
+.box1{
+  min-height: 43vh;
+  background-color: #000000;
+  background-image: linear-gradient(0deg, #000000 0%, #375a92 100%);
+  
+}
+
+.box2{
+  min-height: 33vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.first{
+  margin: 20px;
+}
+
+.sec{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px 2em;
+  justify-items: center;
+  margin: 20px;
+}
+.third{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px 2em;
+  justify-items: center;
+  margin: 20px;
+}
+.songbox{
+  height: 70px;
+  width: 280px;
+  display: flex;
+  cursor: pointer;
+  transition: all .3s linear 0s;
+}
+
+.songbox:hover{
+  transform: scale(1.1);
+}
+
+.songdet{
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 70px;
+  width: 210px;
+  display: flex;
+  align-items: center;
+  
+}
+.songname{
+opacity: 1;
+padding: 10px;
+line-height: 0.8rem;
+color: #ffffff;
+}
+
+.songcard{
+  height: 31vh;
+  width: 30vh;
+  background-color: rgb(46, 45, 45);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;  
+}
+
+.songimg{
+  margin: 10px;
+  margin-bottom: 0;
+}
+
+.bottom{
+    position: sticky;
+    height: 105px;
+    color: white;
+    background-color: black;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#myProgressBar{
+    width: 40rem;
+    cursor: pointer;
+}
+.icons{
+  width: 30px;
+  display: flex;
+  justify-content: center;
+    align-items: center;
+   
+}
+
+.icons img{
+  cursor: pointer;
+}
+
+
+/* rangestyle  */
+.range{
+  margin: 5px;
+}
+  
+  input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 200px;
+    background-color: transparent;
+
+    &:focus {
+      outline-color: #f8b195;
+    }
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -webkit-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+      to right,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#f67280",
+      endColorstr="#355c7d",
+      GradientType=1
+    );
+  }
+
+  input[type="range"]::-moz-range-track {
+    -moz-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -moz-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+      to right,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#f67280",
+      endColorstr="#355c7d",
+      GradientType=1
+    );
+  }
+  
+  input[type="range"]::-ms-track {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -moz-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+      to right,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#f67280",
+      endColorstr="#355c7d",
+      GradientType=1
+    );
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid #f8b195;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  bottom: 8px;
+  background: #222
+    /* url("http://codemenatalie.com/wp-content/uploads/2019/09/slider-thumb.png") */
+    center no-repeat;
+  background-size: 50%;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+  cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+
+
+
+  input[type="range"]::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #f8b195;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    bottom: 8px;
+    background: #222
+      /* url("http://codemenatalie.com/wp-content/uploads/2019/09/slider-thumb.png") */
+      center no-repeat;
+    background-size: 50%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+    cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  input[type="range"]::-ms-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #f8b195;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    bottom: 8px;
+    background: #222
+      /* url("http://codemenatalie.com/wp-content/uploads/2019/09/slider-thumb.png") */
+      center no-repeat;
+    background-size: 50%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+    cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul style="padding-right: 0px">
+        <li class="brand">
+          <img
+            src="https://assets.stickpng.com/images/5ece500f123d6d0004ce5f8a.png"
+            alt="Spotify"
+          />
+        </li>
+        <nav class="header">
+          <a href=""><li class="home pa">Home</li> </a>
+          <a href=""><li class="premium pa">Premium</li> </a>
+          <a href=""><li class="support pa">Support</li> </a>
+          <a href=""><li class="download pa">Download</li></a>
+          <li class="| pa">|</li>
+          <a href=""><li class="signup pa">SignUp</li> </a>
+          <div class="login">
+            <div
+              class="box"
+              style="
+                height: 40px;
+                width: 100px;
+                background-color: white;
+                border-radius: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <h4 style="color: black">LogIn</h4>
+            </div>
+          </div>
+        </nav>
+      </ul>
+    </nav>
+
+    <!-- Mid elements 1-->
+    <div class="container box1" id="0">
+      <div class="first">
+        <span><h2>Good morning</h2></span>
+      </div>
+      <div class="sec">
+        <div class="songbox sb1">
+          <div class="image" id="0">
+            <img
+              id="0"
+              width="70"
+              height="70"
+              src="https://c.saavncdn.com/916/Ram-Siya-Ram-From-Adipurush-Hindi-2023-20230530192919-500x500.jpg"
+              alt="Ram Siya Ram"
+            />
+          </div>
+          <div class="songdet" id="0">
+            <div class="songname" id="0">
+              <p id="0" style="font-weight: bold">Ram Siya Ram</p>
+              <br />
+              <p id="0">Sachet Tandon</p>
+            </div>
+          </div>
+        </div>
+        <div class="songbox sb2" id="1">
+          <div class="image">
+            <img
+              id="1"
+              width="70"
+              height="70"
+              src="https://c.saavncdn.com/248/Evolve-English-2017-20180716230950-500x500.jpg"
+              alt="Believer
+              "
+            />
+          </div>
+          <div class="songdet" id="1">
+            <div class="songname" id="1">
+              <p id="1" style="font-weight: bold">Believer</p>
+              <br />
+              <p id="1">Imagine Dragons</p>
+            </div>
+          </div>
+        </div>
+        <div class="songbox sb3" id="2">
+          <div class="image">
+            <img
+              id="2"
+              width="70"
+              height="70"
+              src="https://lastfm.freetls.fastly.net/i/u/770x0/f5626840e35178f2b6b4da571233875f.jpg#f5626840e35178f2b6b4da571233875f"
+              alt="Alag Asaman"
+            />
+          </div>
+          <div class="songdet" id="2">
+            <div class="songname" id="2">
+              <p id="2" style="font-weight: bold">Alag Aasmaan</p>
+              <br />
+              <p id="2">Anuv Jain</p>
+            </div>
+          </div>
+        </div>
+        <div class="songbox sb4" id="3">
+          <div class="image" id="3">
+            <img
+              id="3"
+              width="70"
+              height="70"
+              src="https://c.saavncdn.com/286/WMG_190295851286-English-2017-500x500.jpg"
+              alt="Perfect"
+            />
+          </div>
+          <div class="songdet" id="3">
+            <div class="songname" id="3">
+              <p id="3" style="font-weight: bold">Perfect</p>
+              <br />
+              <p id="3">Ed Sheeran</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="third">
+        <div class="songbox sb5" id="4">
+          <div class="image" id="4">
+            <img
+              id="4"
+              width="70"
+              height="70"
+              src="https://c.saavncdn.com/552/Unstoppable-English-2016-500x500.jpg"
+              alt="Unstoppable"
+            />
+          </div>
+          <div class="songdet" id="4">
+            <div id="4" class="songname">
+              <p id="4" style="font-weight: bold">Unstoppable</p>
+              <br />
+              <p id="4">Sia</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="songbox sb6" id="5">
+          <div class="image">
+            <img
+              id="5"
+              width="70"
+              height="70"
+              src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Shawn_Mendes_and_Camila_Cabello_-_Se%C3%B1orita.png"
+              alt="Senyorita"
+            />
+          </div>
+          <div class="songdet" id="5">
+            <div class="songname" id="5">
+              <p id="5" style="font-weight: bold">Senyorita</p>
+              <br />
+              <p id="5">Shawn Mendes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="songbox sb7" id="6">
+          <div class="image">
+            <img
+              id="6"
+              width="70"
+              height="70"
+              src="https://c.saavncdn.com/681/Let-Me-Down-Slowly-English-2018-20190607042218-500x500.jpg"
+              alt="Let Me Down Slowly"
+            />
+          </div>
+          <div class="songdet" id="6">
+            <div class="songname" id="6">
+              <p id="6" style="font-weight: bold">Let Me Down Slowly</p>
+              <br />
+              <p id="6">Alec Benjamin</p>
+            </div>
+          </div>
+        </div>
+        <div class="songbox sb8" id="7">
+          <div class="image">
+            <img
+              id="7"
+              width="70"
+              height="70"
+              src="https://upload.wikimedia.org/wikipedia/en/b/bc/Pasoori_Official_Soundtrack_Cover_Non-Free.webp"
+              alt="Pasoore"
+            />
+          </div>
+          <div class="songdet" id="7">
+            <div class="songname" id="7">
+              <p id="7" style="font-weight: bold">Pasoore</p>
+              <br />
+              <p id="7">Ali Sethi and Shae Gill</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mid elements 1-->
+    <div class="container box2">
+      <div class="songcard">
+        <div class="songimg">
+          <img
+            id="songimg"
+            width="150"
+            height="150"
+            src="https://c.saavncdn.com/916/Ram-Siya-Ram-From-Adipurush-Hindi-2023-20230530192919-500x500.jpg"
+            alt="Ram Siya Ram"
+          />
+        </div>
+        <div class="detail">
+          <div style="line-height: 0.8rem">
+            <p style="font-weight: bold" class="sngnm" id="sngnm">
+              Ram Siya Ram
+            </p>
+            <br />
+            <p id="artnm">Sachet Tandon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bottom navigation -->
+    <div class="bottom">
+      <div class="icons">
+        <!-- favicons -->
+        <img
+          id="previous"
+          width="50"
+          height="50"
+          src="https://img.icons8.com/arcade/64/000000/fast-forward-round.png"
+          alt="fast-forward-round"
+        />
+        <img
+          width="70"
+          height="70"
+          id="masterPlay"
+          src="https://img.icons8.com/bubbles/50/circled-play.png"
+          alt="circled-play"
+        />
+        <img
+          id="next"
+          width="50"
+          height="50"
+          src="https://img.icons8.com/arcade/64/000000/fast-forward-round.png"
+          alt="fast-forward-round"
+        />
+      </div>
+      <input
+        type="range"
+        name="range"
+        id="myProgressBar"
+        min="0"
+        max="100"
+        value="0"
+      />
+    </div>
+    <script>
+        //Initialize vareable
+
+let songIndex = 0;
+let audioElement = new Audio(
+  "https://docs.google.com/uc?export=open&id=1TS6bh6DwVQ0AbD0lP7jNNLwBUgp2nDmJ"
+);
+let masterPlay = document.getElementById("masterPlay");
+let myProgressBar = document.getElementById("myProgressBar");
+let songimg = document.getElementById("songimg");
+
+
+let sng = [
+  "https://docs.google.com/uc?export=open&id=1TS6bh6DwVQ0AbD0lP7jNNLwBUgp2nDmJ",
+  "https://docs.google.com/uc?export=open&id=1irAckmYtHQDMddPlen8iP53yhcdEypo7",
+  "https://docs.google.com/uc?export=open&id=1XMwQareTt9QHsr7Ssq7-cjJYuqvCS2Vk",
+  "https://docs.google.com/uc?export=open&id=1g7KiKn5Wv_-_tUlplupWCONmDh6D0MAs",
+  "https://docs.google.com/uc?export=open&id=14Znxc7sjZpvU35oGWPGfXjLvcYdOPLQJ",
+  "https://docs.google.com/uc?export=open&id=1sN18-bQkz8CrUXnLSMC2cs-PQ2tLmdV9",
+  "https://docs.google.com/uc?export=open&id=164sKMiYRzU35dwWZAnGr_67G3SPSTnYG",
+  "https://docs.google.com/uc?export=open&id=1UdMOA4qF-tFU1BBXlWmyCB_etwV_md-8",
+];
+
+let cover = [
+  "https://c.saavncdn.com/916/Ram-Siya-Ram-From-Adipurush-Hindi-2023-20230530192919-500x500.jpg",
+  "https://c.saavncdn.com/248/Evolve-English-2017-20180716230950-500x500.jpg",
+  "https://lastfm.freetls.fastly.net/i/u/770x0/f5626840e35178f2b6b4da571233875f.jpg#f5626840e35178f2b6b4da571233875f",
+  "https://c.saavncdn.com/286/WMG_190295851286-English-2017-500x500.jpg",
+  "https://c.saavncdn.com/552/Unstoppable-English-2016-500x500.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/8/8d/Shawn_Mendes_and_Camila_Cabello_-_Se%C3%B1orita.png",
+  "https://c.saavncdn.com/681/Let-Me-Down-Slowly-English-2018-20190607042218-500x500.jpg",
+  "https://upload.wikimedia.org/wikipedia/en/b/bc/Pasoori_Official_Soundtrack_Cover_Non-Free.webp",
+];
+
+let songName = [
+  "Ram Siya Ram",
+  "Believer",
+  "Alag Aasmaa",
+  "Perfect",
+  "Unstoppable",
+  "Senyorita",
+  "Let Me Down Slowly",
+  "Pasoore",
+];
+
+let artistName = [
+  "Sachet Tandon",
+  "Imagine Dragons",
+  "Anuv Jain",
+  "Ed Sheeran",
+  "Sia",
+  "Shawn Mendes",
+  "Alec Benjamin",
+  "Ali Sethi and Shae Gill",
+];
+
+// let song121 = [
+//   {
+//     songName: "Ram Siya Ram",
+//     artistName: "Sachet Tandon",
+//     filePath:
+//       "https://docs.google.com/uc?export=open&id=1TS6bh6DwVQ0AbD0lP7jNNLwBUgp2nDmJ",
+//     coverPath:
+//       "https://c.saavncdn.com/916/Ram-Siya-Ram-From-Adipurush-Hindi-2023-20230530192919-500x500.jpg",
+//   },
+//   {
+//     songName: "Believer",
+//     artistName: "Imagine Dragons",
+//     filePath:
+//       "https://docs.google.com/uc?export=open&id=1irAckmYtHQDMddPlen8iP53yhcdEypo7",
+//     coverPath:
+//       "https://c.saavncdn.com/248/Evolve-English-2017-20180716230950-500x500.jpg",
+//   },
+//   {
+//     songName: "Alag Aasmaa",
+//     artistName: "Anuv Jain",
+//     filePath:
+//       "https://docs.google.com/uc?export=open&id=1XMwQareTt9QHsr7Ssq7-cjJYuqvCS2Vk",
+//     coverPath:
+//       "https://lastfm.freetls.fastly.net/i/u/770x0/f5626840e35178f2b6b4da571233875f.jpg#f5626840e35178f2b6b4da571233875f",
+//   },
+//   {
+//     songName: "Perfect",
+//     artistName: "Ed Sheeran",
+//     filePath:
+//       "https://docs.google.com/uc?export=open&id=1g7KiKn5Wv_-_tUlplupWCONmDh6D0MAs",
+//     coverPath:
+//       "https://c.saavncdn.com/286/WMG_190295851286-English-2017-500x500.jpg",
+//   },
+//   {
+//     songName: "Unstoppable",
+//     artistName: "Sia",
+//     filePath:
+//       "https://docs.google.com/uc?export=open&id=14Znxc7sjZpvU35oGWPGfXjLvcYdOPLQJ",
+//     coverPath:
+//       "https://c.saavncdn.com/552/Unstoppable-English-2016-500x500.jpg",
+//   },
+//   {
+//     songName: "Senyorita",
+//     artistName: "Shawn Mendes",
+//     filePath:
+//       "https://docs.google.com/uc?export=open&id=1sN18-bQkz8CrUXnLSMC2cs-PQ2tLmdV9",
+//     coverPath:
+//       "https://upload.wikimedia.org/wikipedia/commons/8/8d/Shawn_Mendes_and_Camila_Cabello_-_Se%C3%B1orita.png",
+//   },
+//   {
+//     songName: "Let Me Down Slowly",
+//     artistName: "Alec Benjamin",
+//     filePath:
+//       "https://docs.google.com/uc?export=open&id=164sKMiYRzU35dwWZAnGr_67G3SPSTnYG",
+//     coverPath:
+//       "https://c.saavncdn.com/681/Let-Me-Down-Slowly-English-2018-20190607042218-500x500.jpg",
+//   },
+//   {
+//     songName: "Pasoore",
+//     artistName: "Ali Sethi and Shae Gill",
+//     filePath:
+//       "https://docs.google.com/uc?export=open&id=1UdMOA4qF-tFU1BBXlWmyCB_etwV_md-8",
+//     coverPath:
+//       "https://upload.wikimedia.org/wikipedia/en/b/bc/Pasoori_Official_Soundtrack_Cover_Non-Free.webp",
+//   },
+// ];
+
+//Handel Play/Paus click:
+
+masterPlay.addEventListener("click", () => {
+  if (audioElement.paused || audioElement.currentTime <= 0) {
+    audioElement.play();
+    masterPlay.src = "https://img.icons8.com/bubbles/50/pause.png";
+  } else {
+    audioElement.pause();
+    masterPlay.src = "https://img.icons8.com/bubbles/50/circled-play.png";
+  }
+});
+
+//Listen to Event
+audioElement.addEventListener("timeupdate", () => {
+  //update Seekbar
+  progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
+  myProgressBar.value = progress;
+});
+
+audioElement.addEventListener("change", () => {
+  audioElement.currentTime =
+    (myProgressBar.value * audioElement.duration) / 100;
+});
+
+// Create event listener
+document.addEventListener("click", (e) => {
+  // Retrieve id from clicked element
+  songIndex = e.target.id;
+  let song = sng[songIndex];
+  audioElement.src = song;
+  audioElement.currentTime = 0;
+  audioElement.play();
+  masterPlay.src = "https://img.icons8.com/bubbles/50/pause.png";
+
+  let img = cover[songIndex];
+  songimg.src = img;
+
+  let sngnm = songName[songIndex];
+  document.getElementById("sngnm").innerText=sngnm;
+
+  let artnm = artistName[songIndex];
+  document.getElementById("artnm").innerText=artnm;
+});
+
+//Next button
+document.getElementById("next").addEventListener("click", () => {
+  let num = parseInt(songIndex);
+  if (num > 7) {
+    num = 0;
+  } else {
+    num += 1;
+  }
+  console.log(num);
+  let song = sng[num];
+  audioElement.src = song;
+  audioElement.currentTime = 0;
+  audioElement.play();
+  masterPlay.src = "https://img.icons8.com/bubbles/50/pause.png";
+  num = songIndex;
+});
+
+//Previous button
+document.getElementById("previous").addEventListener("click", () => {
+  if (songIndex >= 0) {
+    songIndex = 0;
+  } else {
+    songIndex -= 1;
+  }
+  let song = sng[songIndex];
+  audioElement.src = song;
+  audioElement.currentTime = 0;
+  audioElement.play();
+  masterPlay.src = "https://img.icons8.com/bubbles/50/pause.png";
+});
+
+    </script>
+    <script
+      src="https://kit.fontawesome.com/26504e4a1f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
